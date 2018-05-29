@@ -10,13 +10,14 @@ import java.util.List;
  * Created by lenovo on 29-05-2018.
  */
 
-public class QuestionViewModel {
+public class QuestionViewModel extends AndroidViewModel {
 
     private QuestionRepository mRepository;
 
     private LiveData<List<Question>> mAllQuestion;
 
     public QuestionViewModel(@NonNull Application application) {
+        super(application);
         mRepository = new QuestionRepository(application);
         mAllQuestion = mRepository.getAllQuestion();
     }
